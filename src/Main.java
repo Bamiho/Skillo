@@ -13,10 +13,6 @@ public class Main {
         int c = 9;
         int P = (a + b + c);
         System.out.println("The perimeter equals " + P);
-
-//HW4
-
-
     }
 }
 
