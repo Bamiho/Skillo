@@ -66,10 +66,10 @@ public class Person {
             return false;
         }
     }
-
     private char validateSex(char sex) {
-        if (sex == 'm' || sex == 'f') {
-            return sex;
+        char lowercaseSex = Character.toLowerCase(sex);
+        if (lowercaseSex == 'm' || lowercaseSex == 'f') {
+            return lowercaseSex;
         } else {
             throw new IllegalArgumentException("Invalid sex input!");
         }
