@@ -17,7 +17,7 @@ public class Person {
 
     public Person(String name, char sex, String religion, String language, String job, String nationality, String egn, String country) {
         this.name = name;
-        this.validateSex(sex);
+        this.sex = validateSex(sex);
         this.religion = religion;
         this.language = language;
         this.job = job;
@@ -73,7 +73,7 @@ public class Person {
         } else if (sex == 'f') {
             return sex;
         } else {
-            throw new IllegalArgumentException("Invalid input!");
+            throw new IllegalArgumentException("Invalid sex input!");
         }
     }
 }
