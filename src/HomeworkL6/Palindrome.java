@@ -1,9 +1,9 @@
-package Homework4;
+package HomeworkL6;
 
 import java.util.Scanner;
 
 public class Palindrome {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int originalNumber, number, reversedNumber = 0, remainder;
         Scanner scanner = new Scanner(System.in);
 

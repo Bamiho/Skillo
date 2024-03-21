@@ -1,4 +1,4 @@
-package Homework4;
+package HomeworkL6;
 
 import java.util.Scanner;
 
@@ -12,11 +12,9 @@ public class SmallestAmongThree {
             double num2 = scanner.nextDouble();
             double num3 = scanner.nextDouble();
 
-            double smallest = findSmallest(num1, num2, num3);
+            double smallestNum = findSmallest(num1, num2, num3);
 
-            System.out.println("The smallest number is: " + smallest);
-
-            scanner.close();
+            System.out.println("The smallest number is: " + smallestNum);
         }
 
         public static double findSmallest(double num1, double num2, double num3) {
