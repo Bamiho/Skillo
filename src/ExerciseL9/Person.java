@@ -68,9 +68,7 @@ public class Person {
     }
 
     private char validateSex(char sex) {
-        if (sex == 'm') {
-            return sex;
-        } else if (sex == 'f') {
+        if (sex == 'm' || sex == 'f') {
             return sex;
         } else {
             throw new IllegalArgumentException("Invalid sex input!");
