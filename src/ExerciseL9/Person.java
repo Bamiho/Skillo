@@ -1,6 +1,5 @@
 package ExerciseL9;
 
-import java.lang.reflect.Constructor;
 import java.time.LocalDate;
 
 public class Person {
@@ -18,7 +17,7 @@ public class Person {
 
     public Person(String name, char sex, String religion, String language, String job, String nationality, String egn, String country) {
         this.name = name;
-        this.sex = sex;
+        this.validateSex(sex);
         this.religion = religion;
         this.language = language;
         this.job = job;
@@ -29,44 +28,52 @@ public class Person {
         this.age = getAge(birthDate);
     }
 
-    private int getAge(LocalDate birthDate){
+    private int getAge(LocalDate birthDate) {
         return LocalDate.now().getYear() - birthDate.getYear();
     }
 
     private LocalDate getBirthDate(String egn) {
-        int birthYear = Integer.parseInt(egn.substring(0,2));
-        int birthMonth = Integer.parseInt(egn.substring(2,4));
-        int birthDay = Integer.parseInt(egn.substring(4,6));
+        int birthYear = Integer.parseInt(egn.substring(0, 2));
+        int birthMonth = Integer.parseInt(egn.substring(2, 4));
+        int birthDay = Integer.parseInt(egn.substring(4, 6));
 
-        if(birthMonth > 40) {
-            birthYear = birthYear + 2000;
-            birthMonth = birthMonth - 40;
+        if (birthMonth > 40) {
+            birthYear += 2000;
+            birthMonth -= 40;
         } else {
-            birthYear = birthYear + 1900;
+            birthYear += 1900;
         }
         return LocalDate.of(birthYear, birthMonth, birthDay);
     }
 
     private String validateEGN(String egn) {
-        if(egn.length() == 10 && containsOnlyDigits(egn)){
+        if (egn.length() == 10 && containsOnlyDigits(egn)) {
             return egn;
-        } else {throw new IllegalArgumentException("The EGN must be consisted of 10 digits!");
-
+        } else {
+            throw new IllegalArgumentException("The EGN must consist of 10 digits!");
+        }
     }
-}
 
     private boolean containsOnlyDigits(String egn) {
-       try {
-           if (Long.parseLong(egn)>0){
-               return true;
-           } else {
-               return false;
-           }
+        try {
+            if (Long.parseLong(egn)>0){
+                return true;
+            } else {
+                return false;
+            }
 
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
 
-       } catch(NumberFormatException e){
-           return false;
-       }
+    private char validateSex(char sex) {
+        if (sex == 'm') {
+            return sex;
+        } else if (sex == 'f') {
+            return sex;
+        } else {
+            throw new IllegalArgumentException("Invalid input!");
+        }
     }
 }
-
