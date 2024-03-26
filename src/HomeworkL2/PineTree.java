@@ -1,4 +1,4 @@
-package HomeworkL3;
+package HomeworkL2;
 
 public class PineTree {
     public static void main(String[] args) {

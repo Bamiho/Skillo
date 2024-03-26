@@ -1,4 +1,4 @@
-package HomeworkL3;
+package HomeworkL2;
 
 public class fullName {
         public static void main(String[] args) {
