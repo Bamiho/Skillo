@@ -37,6 +37,5 @@ public class RegisterUserTest {
         Thread.sleep(1000);
 
         driver.quit();
-
     }
 }
